@@ -1,32 +1,64 @@
-# AEM Author-Publish Setup on Linux (Ubuntu 24.04)
+# 🧱 AEM (Adobe Experience Manager) Author & Publish Setup on Ubuntu EC2
 
-This repository documents the setup and configuration of Adobe Experience Manager (AEM) Author and Publish instances on a single Ubuntu Linux server with systemd service files.
+This guide outlines how to configure and run both **AEM Author** and **AEM Publish** instances on a single Ubuntu-based EC2 instance. It includes system requirements, installation steps, file structure, and service configuration.
 
-## 🔧 What’s Included
+---
 
-- AEM Author and Publish instance setup using `.jar` files
-- Port configuration (Author on 4502, Publish on 4503)
-- Systemd service files to manage AEM as services
-- Java configuration and memory tuning
-- Basic content page with a “Related Posts” section using We.Retail
-- Best practices and troubleshooting notes
+## 📦 System Requirements
 
-## 🧱 Tech Stack
+- **EC2 Instance**: Ubuntu 20.04 or later  
+- **Instance Type**: `t2.medium` (2 vCPUs, 4 GB RAM)  
+- **Java**: OpenJDK 11  
+- **Storage**: 20 GB minimum recommended  
+- **Network**: Inbound access to ports `4502`, `4503`, and `22` (SSH)
 
-- AEM 6.x (JAR + License file)
-- Java 11 (OpenJDK)
-- Ubuntu 20.04+ (tested on EC2 t2.medium)
-- Systemd for process management
+---
 
-## 📁 Folder Structure
+## ☕ Install Java 11
 
-/opt/aem/
-├── author/
-│ └── aem-author.jar
-├── publish/
-│ └── aem-publish.jar
+Run the following commands to install Java 11:
+
+```bash
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+
+```
+
+## ✅ Check Java Version
+
+```bash
+java -version
+```
 
 
+## 📁 Directory Structure for AEM
+
+Organize AEM files as follows:
+
+### 📂 Author Instance
+```
+/opt/aem/author/
+├── aem-author.jar
+└── license.properties
+```
+
+### 📂 Publish Instance
+```
+/opt/aem/publish/
+├── aem-publish.jar
+└── license.properties
+```
+
+> 💡 Get these `.jar` and `.properties` files from your IT/Adobe team.
+
+## 📁 Directory Structure for Systemd Service Files
+
+Organize systemd service files as follows:
+
+### 📂 For both Author and Publish
+```
 /etc/systemd/system/
 ├── aem-author.service
 ├── aem-publish.service
+```
+
