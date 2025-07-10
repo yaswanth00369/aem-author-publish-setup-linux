@@ -1,10 +1,6 @@
-# AEM-Author-Publish-Setup-Linux (Ubuntu 24.04)
-AEM Author and Publish instance setup on a Linux server (Ubuntu) with systemd service files, performance tuning, and sample page creation using We.Retail template.
+# AEM Author-Publish Setup on Linux (Ubuntu 24.04)
 
-
-# AEM Author-Publish Setup on Linux
-
-This repository documents the setup and configuration of Adobe Experience Manager (AEM) Author and Publish instances on a single Ubuntu Linux server.
+This repository documents the setup and configuration of Adobe Experience Manager (AEM) Author and Publish instances on a single Ubuntu Linux server with systemd service files.
 
 ## 🔧 What’s Included
 
@@ -24,4 +20,13 @@ This repository documents the setup and configuration of Adobe Experience Manage
 
 ## 📁 Folder Structure
 
+/opt/aem/
+├── author/
+│ └── aem-author.jar
+├── publish/
+│ └── aem-publish.jar
 
+
+/etc/systemd/system/
+├── aem-author.service
+├── aem-publish.service
