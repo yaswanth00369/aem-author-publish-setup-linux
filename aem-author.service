@@ -1,0 +1,19 @@
+[Unit]
+Description=AEM Author Instance
+After=network.target
+
+[Service]
+Type=forking
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/aem/author
+ExecStart=/opt/aem/author/crx-quickstart/bin/start
+ExecStop=/opt/aem/author/crx-quickstart/bin/stop
+PIDFile=/opt/aem/author/crx-quickstart/conf/cq.pid
+SuccessExitStatus=0 143
+Restart=on-failure
+#CPUQuota=50%
+
+
+[Install]
+WantedBy=multi-user.target
