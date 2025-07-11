@@ -62,3 +62,56 @@ Organize systemd service files as follows:
 ├── aem-publish.service
 ```
 
+## 🚀 Start AEM Instances (First-Time Setup)
+
+### Start the Author instance on port `4502`:
+```bash
+cd /opt/aem/author
+java -Xmx1024m -Dsling.run.modes=author -jar aem-author.jar -p 4502
+```
+
+### Start the Publish instance on port `4503`:
+```bash
+cd /opt/aem/publish
+java -Xmx1024m -Dsling.run.modes=publish -jar aem-publish.jar -p 4503
+```
+
+👉 During the first startup, follow the prompt to set the **admin password**.
+
+---
+
+## 🔧 Enable and Control systemd Services
+
+### Reload systemd to apply changes:
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+```
+
+### Enable services at boot:
+```bash
+sudo systemctl enable aem-author.service
+sudo systemctl enable aem-publish.service
+```
+
+### Start services:
+```bash
+sudo systemctl start aem-author.service
+sudo systemctl start aem-publish.service
+```
+
+### Check status:
+```bash
+sudo systemctl status aem-author.service
+sudo systemctl status aem-publish.service
+```
+
+### Stop services:
+```bash
+sudo systemctl stop aem-author.service
+sudo systemctl stop aem-publish.service
+```
+
+
+
+
