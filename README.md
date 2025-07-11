@@ -128,20 +128,23 @@ sudo systemctl stop aem-publish.service
 ---
 ## 🟢 Accessing the Author Instance
 
-### 🔗 Visit for Login Page: http://13.234.53.222:4502/
+### 🔗 Visit for Login Page: 
+http://13.234.53.222:4502/
 
 <img width="1299" height="741" alt="image" src="https://github.com/user-attachments/assets/744dcb2c-7a3d-4599-94c9-a496bad266f0" />
 
-### 🔗 Visit for Default We-Retail Project: http://13.234.53.222:4502/projects.html/content/projects/
+### 🔗 Visit for Default We-Retail Project: 
+http://13.234.53.222:4502/projects.html/content/projects/
 
 <img width="1299" height="741" alt="image" src="https://github.com/user-attachments/assets/72ab90fd-d5cb-4cca-84a1-f142ca626692" />
 
 
 ---
 
-## 🟢 Accessing the Publish Instance We-Retail Project Content Page
+## 🟢 Accessing the Publish Instance
 
-### 🔗 Visit: http://13.234.53.222:4503/
+### 🔗 Visit for We-Retail Project Content: 
+http://13.234.53.222:4503/
 
 <img width="1299" height="741" alt="image" src="https://github.com/user-attachments/assets/5d743047-705b-4414-9f85-036197925f39" />
 
@@ -149,7 +152,7 @@ sudo systemctl stop aem-publish.service
 
 ## 📝 Notes
 
-- **Author and Publish are independent instances.**
+- **Author and Publisher are independent instances.**
 - **Maintain different run modes (`author`, `publish`).**
 - **Systemd handles background services and autostart.**
 - **Ensure `4502` and `4503` ports are open in the AWS Security Group.**
