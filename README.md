@@ -69,14 +69,26 @@ Organize systemd service files as follows:
 cd /opt/aem/author
 java -Xmx1024m -Dsling.run.modes=author -jar aem-author.jar -p 4502
 ```
+👉 During the first startup, follow the prompt to set the **admin password**.
 
 ### Start the Publish instance on port `4503`:
 ```bash
 cd /opt/aem/publish
 java -Xmx1024m -Dsling.run.modes=publish -jar aem-publish.jar -p 4503
 ```
-
 👉 During the first startup, follow the prompt to set the **admin password**.
+
+
+### 🔁 Fix Default Port for Publish instance
+
+By default, AEM Quickstart sets the port to `4502`, which is meant for Author.
+
+To configure the Publish instance to run on port `4503`, update the following configuration files:
+
+```bash
+sed -i 's/CQ_PORT=4502/CQ_PORT=4503/' /opt/aem/publish/crx-quickstart/bin/start
+sed -i 's/CQ_PORT=4502/CQ_PORT=4503/' /opt/aem/publish/crx-quickstart/bin/quickstart
+```
 
 ---
 
