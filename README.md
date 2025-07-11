@@ -6,7 +6,7 @@ This guide outlines how to configure and run both **AEM Author** and **AEM Publi
 
 ## 📦 System Requirements
 
-- **EC2 Instance**: Ubuntu 20.04 or later  
+- **EC2 Instance**: Ubuntu 24.04  
 - **Instance Type**: `t2.medium` (2 vCPUs, 4 GB RAM)  
 - **Java**: OpenJDK 11  
 - **Storage**: 20 GB minimum recommended  
@@ -123,7 +123,22 @@ sudo systemctl status aem-publish.service
 sudo systemctl stop aem-author.service
 sudo systemctl stop aem-publish.service
 ```
+---
+## 🟢 Accessing the Author Instance
+
+### 🔗 Visit for Login Page: http://13.234.53.222:4502/
+
+<img width="1299" height="741" alt="image" src="https://github.com/user-attachments/assets/744dcb2c-7a3d-4599-94c9-a496bad266f0" />
+
+### 🔗 Visit for Default We-Retail Project: http://13.234.53.222:4502/projects.html/content/projects/
+
+<img width="1299" height="741" alt="image" src="https://github.com/user-attachments/assets/72ab90fd-d5cb-4cca-84a1-f142ca626692" />
 
 
+---
 
+## 🟢 Accessing the Publish Instance We-Retail Project Content Page
 
+### 🔗 Visit: http://13.234.53.222:4503/
+
+<img width="1299" height="741" alt="image" src="https://github.com/user-attachments/assets/5d743047-705b-4414-9f85-036197925f39" />
