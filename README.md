@@ -11,6 +11,8 @@ This guide outlines how to configure and run both **AEM Author** and **AEM Publi
 - **Java**: OpenJDK 11  
 - **Storage**: 20 GB minimum recommended  
 - **Network**: Inbound access to ports `4502`, `4503`, and `22` (SSH)
+- **AEM:** Adobe Experience Manager Quickstart `.jar` file with `license.properties` is required — not open-source and needs a valid subscription from Adobe.
+
 
 ---
 
@@ -142,3 +144,13 @@ sudo systemctl stop aem-publish.service
 ### 🔗 Visit: http://13.234.53.222:4503/
 
 <img width="1299" height="741" alt="image" src="https://github.com/user-attachments/assets/5d743047-705b-4414-9f85-036197925f39" />
+
+---
+
+## 📝 Notes
+
+- **Author and Publish are independent instances.**
+- **Maintain different run modes (`author`, `publish`).**
+- **Systemd handles background services and autostart.**
+- **Ensure `4502` and `4503` ports are open in the AWS Security Group.**
+
