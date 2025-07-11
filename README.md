@@ -154,3 +154,12 @@ sudo systemctl stop aem-publish.service
 - **Systemd handles background services and autostart.**
 - **Ensure `4502` and `4503` ports are open in the AWS Security Group.**
 
+---
+
+## 📄 Complete Full Setup Guide
+
+**For detailed step-by-step instructions, refer to the PDF guide.**
+
+👉 [AEM-Setup-Guide-ForLinux.pdf](./AEM-Setup-Guide-ForLinux.pdf)
+
+
