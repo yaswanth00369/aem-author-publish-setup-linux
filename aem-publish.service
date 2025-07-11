@@ -1,0 +1,18 @@
+[Unit]
+Description=AEM Publish Instance
+After=network.target
+
+[Service]
+Type=forking
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/aem/publish
+ExecStart=/opt/aem/publish/crx-quickstart/bin/start
+ExecStop=/opt/aem/publish/crx-quickstart/bin/stop
+PIDFile=/opt/aem/publish/crx-quickstart/conf/cq.pid
+SuccessExitStatus=0 143
+Restart=on-failure
+#CPUQuota=25%
+
+[Install]
+WantedBy=multi-user.target
